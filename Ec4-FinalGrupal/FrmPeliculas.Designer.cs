@@ -34,17 +34,16 @@
             this.tbpModificar = new System.Windows.Forms.TabPage();
             this.tbpRegistros = new System.Windows.Forms.TabPage();
             this.tbControl.SuspendLayout();
-            this.tbpRegistrar.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnRegresar
             // 
             this.btnRegresar.BackColor = System.Drawing.Color.Firebrick;
-            this.btnRegresar.Font = new System.Drawing.Font("Algerian", 12F);
+            this.btnRegresar.Font = new System.Drawing.Font("Cambria", 12.5F, System.Drawing.FontStyle.Bold);
             this.btnRegresar.ForeColor = System.Drawing.Color.White;
-            this.btnRegresar.Location = new System.Drawing.Point(6, 386);
+            this.btnRegresar.Location = new System.Drawing.Point(749, 12);
             this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(119, 38);
+            this.btnRegresar.Size = new System.Drawing.Size(119, 35);
             this.btnRegresar.TabIndex = 0;
             this.btnRegresar.Text = "Regresar";
             this.btnRegresar.UseVisualStyleBackColor = false;
@@ -55,39 +54,38 @@
             this.tbControl.Controls.Add(this.tbpRegistrar);
             this.tbControl.Controls.Add(this.tbpModificar);
             this.tbControl.Controls.Add(this.tbpRegistros);
-            this.tbControl.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Bold);
-            this.tbControl.Location = new System.Drawing.Point(12, 12);
+            this.tbControl.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold);
+            this.tbControl.Location = new System.Drawing.Point(12, 23);
             this.tbControl.Name = "tbControl";
             this.tbControl.SelectedIndex = 0;
-            this.tbControl.Size = new System.Drawing.Size(856, 456);
+            this.tbControl.Size = new System.Drawing.Size(856, 445);
             this.tbControl.TabIndex = 1;
             // 
             // tbpRegistrar
             // 
-            this.tbpRegistrar.Controls.Add(this.btnRegresar);
-            this.tbpRegistrar.Location = new System.Drawing.Point(4, 24);
+            this.tbpRegistrar.Location = new System.Drawing.Point(4, 28);
             this.tbpRegistrar.Name = "tbpRegistrar";
             this.tbpRegistrar.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpRegistrar.Size = new System.Drawing.Size(848, 428);
+            this.tbpRegistrar.Size = new System.Drawing.Size(848, 413);
             this.tbpRegistrar.TabIndex = 0;
             this.tbpRegistrar.Text = "Registrar";
             this.tbpRegistrar.UseVisualStyleBackColor = true;
             // 
             // tbpModificar
             // 
-            this.tbpModificar.Location = new System.Drawing.Point(4, 22);
+            this.tbpModificar.Location = new System.Drawing.Point(4, 28);
             this.tbpModificar.Name = "tbpModificar";
             this.tbpModificar.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpModificar.Size = new System.Drawing.Size(848, 430);
+            this.tbpModificar.Size = new System.Drawing.Size(848, 410);
             this.tbpModificar.TabIndex = 1;
             this.tbpModificar.Text = "Modificar";
             this.tbpModificar.UseVisualStyleBackColor = true;
             // 
             // tbpRegistros
             // 
-            this.tbpRegistros.Location = new System.Drawing.Point(4, 24);
+            this.tbpRegistros.Location = new System.Drawing.Point(4, 28);
             this.tbpRegistros.Name = "tbpRegistros";
-            this.tbpRegistros.Size = new System.Drawing.Size(848, 428);
+            this.tbpRegistros.Size = new System.Drawing.Size(848, 410);
             this.tbpRegistros.TabIndex = 2;
             this.tbpRegistros.Text = "Registros";
             this.tbpRegistros.UseVisualStyleBackColor = true;
@@ -98,13 +96,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(880, 480);
+            this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.tbControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmPeliculas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrar Peliculas";
             this.tbControl.ResumeLayout(false);
-            this.tbpRegistrar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
