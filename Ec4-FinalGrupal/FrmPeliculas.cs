@@ -1,4 +1,4 @@
-﻿using Oracle.ManagedDataAccess.Client;
+﻿// using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +9,8 @@ using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OracleClient;
+
 
 namespace Ec4_FinalGrupal
 {
@@ -20,7 +22,7 @@ namespace Ec4_FinalGrupal
             prueba();
         }
 
-        OracleConnection Con = new OracleConnection("Data Source=xe;User ID=EC1;Password=12345;");
+        OracleConnection Con = new OracleConnection("Data Source=xe;User ID=ESTUDIANTE;Password=BELCEBU123;");
 
         private void prueba()
         {
