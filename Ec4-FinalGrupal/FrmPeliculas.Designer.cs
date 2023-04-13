@@ -33,7 +33,22 @@
             this.tbpRegistrar = new System.Windows.Forms.TabPage();
             this.tbpModificar = new System.Windows.Forms.TabPage();
             this.tbpRegistros = new System.Windows.Forms.TabPage();
+            this.dgvPeliculas = new System.Windows.Forms.DataGridView();
+            this.colCodPeli = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTitulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAEstreno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIdioma = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColSinop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPresu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIngre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCodE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCodDirec = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGenero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colClasi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbControl.SuspendLayout();
+            this.tbpRegistros.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPeliculas)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRegresar
@@ -76,19 +91,114 @@
             this.tbpModificar.Location = new System.Drawing.Point(4, 28);
             this.tbpModificar.Name = "tbpModificar";
             this.tbpModificar.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpModificar.Size = new System.Drawing.Size(848, 410);
+            this.tbpModificar.Size = new System.Drawing.Size(848, 413);
             this.tbpModificar.TabIndex = 1;
             this.tbpModificar.Text = "Modificar";
             this.tbpModificar.UseVisualStyleBackColor = true;
             // 
             // tbpRegistros
             // 
+            this.tbpRegistros.Controls.Add(this.dgvPeliculas);
             this.tbpRegistros.Location = new System.Drawing.Point(4, 28);
             this.tbpRegistros.Name = "tbpRegistros";
-            this.tbpRegistros.Size = new System.Drawing.Size(848, 410);
+            this.tbpRegistros.Size = new System.Drawing.Size(848, 413);
             this.tbpRegistros.TabIndex = 2;
             this.tbpRegistros.Text = "Registros";
             this.tbpRegistros.UseVisualStyleBackColor = true;
+            // 
+            // dgvPeliculas
+            // 
+            this.dgvPeliculas.AllowUserToAddRows = false;
+            this.dgvPeliculas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPeliculas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colCodPeli,
+            this.colTitulo,
+            this.colAEstreno,
+            this.colDura,
+            this.colIdioma,
+            this.ColSinop,
+            this.colPresu,
+            this.colIngre,
+            this.colCodE,
+            this.colCodDirec,
+            this.colGenero,
+            this.colClasi});
+            this.dgvPeliculas.Location = new System.Drawing.Point(3, 3);
+            this.dgvPeliculas.Name = "dgvPeliculas";
+            this.dgvPeliculas.Size = new System.Drawing.Size(842, 407);
+            this.dgvPeliculas.TabIndex = 0;
+            // 
+            // colCodPeli
+            // 
+            this.colCodPeli.DataPropertyName = "CooPeli";
+            this.colCodPeli.HeaderText = "Codigo Pelicula";
+            this.colCodPeli.Name = "colCodPeli";
+            // 
+            // colTitulo
+            // 
+            this.colTitulo.DataPropertyName = "TituloPeli";
+            this.colTitulo.HeaderText = "Titulo";
+            this.colTitulo.Name = "colTitulo";
+            // 
+            // colAEstreno
+            // 
+            this.colAEstreno.DataPropertyName = "AniOEsPeli";
+            this.colAEstreno.HeaderText = "Año de Estreno";
+            this.colAEstreno.Name = "colAEstreno";
+            // 
+            // colDura
+            // 
+            this.colDura.DataPropertyName = "DuracPeli";
+            this.colDura.HeaderText = "Duracion";
+            this.colDura.Name = "colDura";
+            // 
+            // colIdioma
+            // 
+            this.colIdioma.DataPropertyName = "IdiomaPeli";
+            this.colIdioma.HeaderText = "Idioma";
+            this.colIdioma.Name = "colIdioma";
+            // 
+            // ColSinop
+            // 
+            this.ColSinop.DataPropertyName = "SinopPeli";
+            this.ColSinop.HeaderText = "Sinopsis";
+            this.ColSinop.Name = "ColSinop";
+            // 
+            // colPresu
+            // 
+            this.colPresu.DataPropertyName = "PresuPeli";
+            this.colPresu.HeaderText = "Presupuesto (MD)";
+            this.colPresu.Name = "colPresu";
+            // 
+            // colIngre
+            // 
+            this.colIngre.DataPropertyName = "IngresoPeli";
+            this.colIngre.HeaderText = "Ingresos (MD)";
+            this.colIngre.Name = "colIngre";
+            // 
+            // colCodE
+            // 
+            this.colCodE.DataPropertyName = "CodEstud";
+            this.colCodE.HeaderText = "Estudio";
+            this.colCodE.Name = "colCodE";
+            // 
+            // colCodDirec
+            // 
+            this.colCodDirec.DataPropertyName = "CodDirec";
+            this.colCodDirec.HeaderText = "Director";
+            this.colCodDirec.Name = "colCodDirec";
+            // 
+            // colGenero
+            // 
+            this.colGenero.DataPropertyName = "CodGenero";
+            this.colGenero.HeaderText = "Genero";
+            this.colGenero.Name = "colGenero";
+            // 
+            // colClasi
+            // 
+            this.colClasi.DataPropertyName = "CodClasi";
+            this.colClasi.HeaderText = "Clasificacion";
+            this.colClasi.Name = "colClasi";
             // 
             // FrmPeliculas
             // 
@@ -103,6 +213,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrar Peliculas";
             this.tbControl.ResumeLayout(false);
+            this.tbpRegistros.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPeliculas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -114,5 +226,18 @@
         private System.Windows.Forms.TabPage tbpRegistrar;
         private System.Windows.Forms.TabPage tbpModificar;
         private System.Windows.Forms.TabPage tbpRegistros;
+        private System.Windows.Forms.DataGridView dgvPeliculas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCodPeli;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTitulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAEstreno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIdioma;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColSinop;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPresu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIngre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCodE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCodDirec;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colGenero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colClasi;
     }
 }

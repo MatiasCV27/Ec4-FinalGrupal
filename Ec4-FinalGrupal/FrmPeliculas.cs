@@ -1,5 +1,4 @@
-﻿// using Oracle.ManagedDataAccess.Client;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,22 +15,14 @@ namespace Ec4_FinalGrupal
 {
     public partial class FrmPeliculas : Form
     {
+        OracleConnection Con = new OracleConnection("Data Source=xe;User ID=EC1;Password=12345;");
+
+        objCine.clsPeliculas Pe = new objCine.clsPeliculas();
+
         public FrmPeliculas()
         {
             InitializeComponent();
-            prueba();
-        }
-
-        OracleConnection Con = new OracleConnection("Data Source=xe;User ID=ESTUDIANTE;Password=BELCEBU123;");
-
-        private void prueba()
-        {
-            try { 
-                Con.Open();
-                MessageBox.Show("La conexión se ha establecido correctamente");
-            } catch (Exception e) {
-                MessageBox.Show("Error al intentar conectar a la base de datos: " + e.Message);
-            }
+            dgvPeliculas.DataSource = Pe.ListarPelicula(Con);
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
