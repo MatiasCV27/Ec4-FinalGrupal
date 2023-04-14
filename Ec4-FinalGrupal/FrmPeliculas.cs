@@ -15,20 +15,23 @@ namespace Ec4_FinalGrupal
 {
     public partial class FrmPeliculas : Form
     {
-        OracleConnection Con = new OracleConnection("Data Source=xe;User ID=EC1;Password=12345;");
-
-        objCine.clsPeliculas Pe = new objCine.clsPeliculas();
-
         public FrmPeliculas()
         {
             InitializeComponent();
-            dgvPeliculas.DataSource = Pe.ListarPelicula(Con);
         }
+
+        OracleConnection Con = new OracleConnection("Data Source=xe;User ID=EC1;Password=12345;");
+
+        objCine.clsPeliculas Pe = new objCine.clsPeliculas();
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            dgvPeliculas.DataSource = Pe.ListarPelicula(Con);
+        }
     }
 }

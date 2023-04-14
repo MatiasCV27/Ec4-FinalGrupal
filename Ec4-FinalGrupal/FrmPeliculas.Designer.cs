@@ -46,7 +46,9 @@
             this.colCodDirec = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colGenero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colClasi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnRegistrar = new System.Windows.Forms.Button();
             this.tbControl.SuspendLayout();
+            this.tbpRegistrar.SuspendLayout();
             this.tbpRegistros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeliculas)).BeginInit();
             this.SuspendLayout();
@@ -78,6 +80,7 @@
             // 
             // tbpRegistrar
             // 
+            this.tbpRegistrar.Controls.Add(this.btnRegistrar);
             this.tbpRegistrar.Location = new System.Drawing.Point(4, 28);
             this.tbpRegistrar.Name = "tbpRegistrar";
             this.tbpRegistrar.Padding = new System.Windows.Forms.Padding(3);
@@ -200,6 +203,19 @@
             this.colClasi.HeaderText = "Clasificacion";
             this.colClasi.Name = "colClasi";
             // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.BackColor = System.Drawing.Color.Firebrick;
+            this.btnRegistrar.Font = new System.Drawing.Font("Cambria", 12.5F, System.Drawing.FontStyle.Bold);
+            this.btnRegistrar.ForeColor = System.Drawing.Color.White;
+            this.btnRegistrar.Location = new System.Drawing.Point(365, 189);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(119, 35);
+            this.btnRegistrar.TabIndex = 1;
+            this.btnRegistrar.Text = "Registrar";
+            this.btnRegistrar.UseVisualStyleBackColor = false;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
+            // 
             // FrmPeliculas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,6 +229,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrar Peliculas";
             this.tbControl.ResumeLayout(false);
+            this.tbpRegistrar.ResumeLayout(false);
             this.tbpRegistros.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeliculas)).EndInit();
             this.ResumeLayout(false);
@@ -239,5 +256,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colCodDirec;
         private System.Windows.Forms.DataGridViewTextBoxColumn colGenero;
         private System.Windows.Forms.DataGridViewTextBoxColumn colClasi;
+        private System.Windows.Forms.Button btnRegistrar;
     }
 }
