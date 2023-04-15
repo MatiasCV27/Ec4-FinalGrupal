@@ -31,6 +31,7 @@
             this.btnRegresar = new System.Windows.Forms.Button();
             this.tbControl = new System.Windows.Forms.TabControl();
             this.tbpRegistrar = new System.Windows.Forms.TabPage();
+            this.btnRegistrar = new System.Windows.Forms.Button();
             this.tbpModificar = new System.Windows.Forms.TabPage();
             this.tbpRegistros = new System.Windows.Forms.TabPage();
             this.dgvPeliculas = new System.Windows.Forms.DataGridView();
@@ -46,7 +47,6 @@
             this.colCodDirec = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colGenero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colClasi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnRegistrar = new System.Windows.Forms.Button();
             this.tbControl.SuspendLayout();
             this.tbpRegistrar.SuspendLayout();
             this.tbpRegistros.SuspendLayout();
@@ -88,6 +88,19 @@
             this.tbpRegistrar.TabIndex = 0;
             this.tbpRegistrar.Text = "Registrar";
             this.tbpRegistrar.UseVisualStyleBackColor = true;
+            // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.BackColor = System.Drawing.Color.Firebrick;
+            this.btnRegistrar.Font = new System.Drawing.Font("Cambria", 12.5F, System.Drawing.FontStyle.Bold);
+            this.btnRegistrar.ForeColor = System.Drawing.Color.White;
+            this.btnRegistrar.Location = new System.Drawing.Point(706, 357);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(119, 35);
+            this.btnRegistrar.TabIndex = 1;
+            this.btnRegistrar.Text = "Registrar";
+            this.btnRegistrar.UseVisualStyleBackColor = false;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // tbpModificar
             // 
@@ -202,19 +215,6 @@
             this.colClasi.DataPropertyName = "CodClasi";
             this.colClasi.HeaderText = "Clasificacion";
             this.colClasi.Name = "colClasi";
-            // 
-            // btnRegistrar
-            // 
-            this.btnRegistrar.BackColor = System.Drawing.Color.Firebrick;
-            this.btnRegistrar.Font = new System.Drawing.Font("Cambria", 12.5F, System.Drawing.FontStyle.Bold);
-            this.btnRegistrar.ForeColor = System.Drawing.Color.White;
-            this.btnRegistrar.Location = new System.Drawing.Point(365, 189);
-            this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(119, 35);
-            this.btnRegistrar.TabIndex = 1;
-            this.btnRegistrar.Text = "Registrar";
-            this.btnRegistrar.UseVisualStyleBackColor = false;
-            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // FrmPeliculas
             // 

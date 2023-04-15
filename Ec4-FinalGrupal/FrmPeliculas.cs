@@ -8,7 +8,7 @@ using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.OracleClient;
+using Oracle.ManagedDataAccess.Client;
 
 
 namespace Ec4_FinalGrupal
@@ -20,7 +20,7 @@ namespace Ec4_FinalGrupal
             InitializeComponent();
         }
 
-        OracleConnection Con = new OracleConnection("Data Source=xe;User ID=EC1;Password=12345;");
+        OracleConnection Con = new OracleConnection(@"DATA SOURCE = localhost:1521/XE; USER ID = EC1; PASSWORD = 12345");
 
         objCine.clsPeliculas Pe = new objCine.clsPeliculas();
 
