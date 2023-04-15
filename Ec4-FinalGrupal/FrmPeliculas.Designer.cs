@@ -139,7 +139,7 @@
             this.colCodDirec,
             this.colGenero,
             this.colClasi});
-            this.dgvPeliculas.Location = new System.Drawing.Point(3, 3);
+            this.dgvPeliculas.Location = new System.Drawing.Point(3, 6);
             this.dgvPeliculas.Name = "dgvPeliculas";
             this.dgvPeliculas.Size = new System.Drawing.Size(842, 407);
             this.dgvPeliculas.TabIndex = 0;
@@ -228,6 +228,7 @@
             this.Name = "FrmPeliculas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrar Peliculas";
+            this.Load += new System.EventHandler(this.FrmPeliculas_Load);
             this.tbControl.ResumeLayout(false);
             this.tbpRegistrar.ResumeLayout(false);
             this.tbpRegistros.ResumeLayout(false);

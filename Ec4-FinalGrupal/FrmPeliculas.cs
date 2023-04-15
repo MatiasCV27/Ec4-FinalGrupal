@@ -31,7 +31,11 @@ namespace Ec4_FinalGrupal
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            dgvPeliculas.DataSource = Pe.ListarPelicula(Con);
+        }
+
+        private void FrmPeliculas_Load(object sender, EventArgs e)
+        {
+            Pe.ListarPelicula(Con, dgvPeliculas);
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Oracle.ManagedDataAccess.Client;
+using System.Windows.Forms;
 
 namespace objCine
 {
@@ -111,16 +112,18 @@ namespace objCine
             }
         }
 
-        // Metodos o funciones
-        public DataTable ListarPelicula(OracleConnection ConOracle)
+        // Metodos o funcionesç
+        public void ListarPelicula(OracleConnection ConOracle, DataGridView dgv)
         {
-            OracleDataAdapter dap = new OracleDataAdapter("sp_ListarPeliculas", ConOracle);
-            dap.SelectCommand.CommandType = CommandType.StoredProcedure;
+            OracleCommand cmd = new OracleCommand("BEGIN sp_ListarPeliculas(:pelicula_cursor); END;", ConOracle);
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
 
-            if (dst.Tables.Contains("peliculas") == true) 
-                dst.Tables["peliculas"].Rows.Clear();
-            dap.Fill(dst, "peliculas");
-            return dst.Tables["peliculas"];
+            ConOracle.Open();
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("pelicula_cursor", OracleDbType.RefCursor, ParameterDirection.Output);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            dgv.DataSource = ds.Tables[0];
         }
 
     }

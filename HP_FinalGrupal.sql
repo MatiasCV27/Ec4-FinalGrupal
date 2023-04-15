@@ -23,6 +23,14 @@ parque al público general, Hammond invita a una pareja de científicos y a un mat
 viabilidad del proyecto. Sin embargo, el sistema de seguridad falla y los dinosaurios se escapan.', 63, 
 1029, 'E0001', 'D0001', 'G0001', 'C0001');
 
+INSERT INTO peliculas(CooPeli, TituloPeli, AniOEsPeli, DuracPeli, IdiomaPeli, SinopPeli, PresuPeli, IngresoPeli
+, CodEstud, CodDirec, CodGenero, CodClasi) 
+VALUES('P0002', 'The Lost World: Jurassic Park', '19/05/1997', 129, 'Ingles', 'Cuatro años después del 
+desastre en el Parque Jurásico, Ian Malcolm llega a una isla situada en Costa Rica, perteneciente a la Costa 
+de las Cinco Muertes, donde los dinosaurios, modificados genéticamente, viven y se reproducen en libertad. Se 
+trata de la llamada zona B, el lugar que servía como laboratorio.', 73, 
+619, 'E0001', 'D0001', 'G0001', 'C0001');
+
 SELECT * FROM peliculas;
 
 --CREATE TABLE Directores (
@@ -52,21 +60,16 @@ SELECT * FROM peliculas;
 --);
 
 -- Procedimientos almacenados de Peliculas
-CREATE PROCEDURE sp_ListarPeliculas AS
-    v_CooPeli Peliculas.CooPeli%TYPE; v_TituloPeli Peliculas.TituloPeli%TYPE;
-    v_AniOEsPeli Peliculas.AniOEsPeli%TYPE; v_DuracPeli Peliculas.DuracPeli%TYPE;
-    v_IdiomaPeli Peliculas.IdiomaPeli%TYPE; v_SinopPeli Peliculas.SinopPeli%TYPE;
-    v_PresuPeli Peliculas.PresuPeli%TYPE; v_IngresoPeli Peliculas.IngresoPeli%TYPE;
-    v_CodEstud Peliculas.CodEstud%TYPE; v_CodDirec Peliculas.CodDirec%TYPE;
-    v_CodGenero Peliculas.CodGenero%TYPE; v_CodClasi Peliculas.CodClasi%TYPE;
+CREATE OR REPLACE PROCEDURE sp_ListarPeliculas (
+    pelicula_cursor OUT SYS_REFCURSOR
+) AS
 BEGIN
-    SELECT CooPeli, TituloPeli, AniOEsPeli, DuracPeli, IdiomaPeli, SinopPeli, PresuPeli, IngresoPeli
-        , CodEstud, CodDirec, CodGenero, CodClasi INTO v_CooPeli, v_TituloPeli, v_AniOEsPeli, v_DuracPeli, 
-        v_IdiomaPeli, v_SinopPeli, v_PresuPeli, v_IngresoPeli  , v_CodEstud, v_CodDirec, 
-        v_CodGenero, v_CodClasi FROM Peliculas ORDER BY TituloPeli ASC;
-END; 
+    OPEN pelicula_cursor FOR SELECT * FROM Peliculas ORDER BY TituloPeli ASC;
+END;
 
---EXECUTE sp_ListarPeliculas;
---DROP PROCEDURE sp_ListarPeliculas;
+--Desc peliculas;
+EXEC sp_ListarPeliculas();
+DROP PROCEDURE sp_ListarPeliculas;
+
 
 
