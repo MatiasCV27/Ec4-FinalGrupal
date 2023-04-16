@@ -71,6 +71,7 @@
             this.colCodGen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCodClasi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtpFeEstreno = new System.Windows.Forms.DateTimePicker();
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.tbControlPeli.SuspendLayout();
             this.tbpRegistrar.SuspendLayout();
             this.tbpRegistros.SuspendLayout();
@@ -99,7 +100,7 @@
             this.tbControlPeli.Location = new System.Drawing.Point(12, 23);
             this.tbControlPeli.Name = "tbControlPeli";
             this.tbControlPeli.SelectedIndex = 0;
-            this.tbControlPeli.Size = new System.Drawing.Size(856, 445);
+            this.tbControlPeli.Size = new System.Drawing.Size(856, 397);
             this.tbControlPeli.TabIndex = 1;
             // 
             // tbpRegistrar
@@ -132,7 +133,7 @@
             this.tbpRegistrar.Location = new System.Drawing.Point(4, 28);
             this.tbpRegistrar.Name = "tbpRegistrar";
             this.tbpRegistrar.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpRegistrar.Size = new System.Drawing.Size(848, 413);
+            this.tbpRegistrar.Size = new System.Drawing.Size(848, 365);
             this.tbpRegistrar.TabIndex = 0;
             this.tbpRegistrar.Text = "Registrar";
             this.tbpRegistrar.UseVisualStyleBackColor = true;
@@ -327,7 +328,7 @@
             this.btnRegistrar.BackColor = System.Drawing.Color.Firebrick;
             this.btnRegistrar.Font = new System.Drawing.Font("Cambria", 12.5F, System.Drawing.FontStyle.Bold);
             this.btnRegistrar.ForeColor = System.Drawing.Color.White;
-            this.btnRegistrar.Location = new System.Drawing.Point(706, 357);
+            this.btnRegistrar.Location = new System.Drawing.Point(506, 224);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(119, 35);
             this.btnRegistrar.TabIndex = 1;
@@ -340,7 +341,7 @@
             this.tbpModificar.Location = new System.Drawing.Point(4, 28);
             this.tbpModificar.Name = "tbpModificar";
             this.tbpModificar.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpModificar.Size = new System.Drawing.Size(848, 413);
+            this.tbpModificar.Size = new System.Drawing.Size(848, 365);
             this.tbpModificar.TabIndex = 1;
             this.tbpModificar.Text = "Modificar";
             this.tbpModificar.UseVisualStyleBackColor = true;
@@ -350,7 +351,7 @@
             this.tbpRegistros.Controls.Add(this.dgvPeliculas);
             this.tbpRegistros.Location = new System.Drawing.Point(4, 28);
             this.tbpRegistros.Name = "tbpRegistros";
-            this.tbpRegistros.Size = new System.Drawing.Size(848, 413);
+            this.tbpRegistros.Size = new System.Drawing.Size(848, 365);
             this.tbpRegistros.TabIndex = 2;
             this.tbpRegistros.Text = "Registros";
             this.tbpRegistros.UseVisualStyleBackColor = true;
@@ -457,12 +458,26 @@
             this.dtpFeEstreno.Size = new System.Drawing.Size(127, 26);
             this.dtpFeEstreno.TabIndex = 25;
             // 
+            // btnActualizar
+            // 
+            this.btnActualizar.BackColor = System.Drawing.Color.Firebrick;
+            this.btnActualizar.Font = new System.Drawing.Font("Cambria", 12.5F, System.Drawing.FontStyle.Bold);
+            this.btnActualizar.ForeColor = System.Drawing.Color.White;
+            this.btnActualizar.Location = new System.Drawing.Point(742, 426);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(119, 35);
+            this.btnActualizar.TabIndex = 2;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
             // FrmPeliculas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(880, 480);
+            this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.tbControlPeli);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -524,5 +539,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpFeEstreno;
+        private System.Windows.Forms.Button btnActualizar;
     }
 }
