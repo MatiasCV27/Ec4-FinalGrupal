@@ -115,16 +115,20 @@ namespace objCine
         // Metodos o funcionesç
         public void ListarPelicula(OracleConnection ConOracle, DataGridView dgv)
         {
-            OracleCommand cmd = new OracleCommand("BEGIN sp_ListarPeliculas(:pelicula_cursor); END;", ConOracle);
-            OracleDataAdapter da = new OracleDataAdapter(cmd);
-
             ConOracle.Open();
-            cmd.CommandType = CommandType.Text;
-            cmd.Parameters.Add("pelicula_cursor", OracleDbType.RefCursor, ParameterDirection.Output);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            dgv.DataSource = ds.Tables[0];
-        }
 
+            OracleCommand cmd = new OracleCommand("sp_ListarPeliculas", ConOracle);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.Add("listapelicula", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
+
+            OracleDataAdapter adt = new OracleDataAdapter();
+            adt.SelectCommand = cmd;
+            DataTable tb = new DataTable();
+            adt.Fill(tb);
+
+            dgv.DataSource = tb;
+
+            ConOracle.Close();
+        }
     }
 }

@@ -31,6 +31,10 @@ namespace Ec4_FinalGrupal
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
+
+
+            Pe.ListarPelicula(Con, dgvPeliculas);
+            tbControlPeli.SelectedIndex = 2;
         }
 
         private void FrmPeliculas_Load(object sender, EventArgs e)

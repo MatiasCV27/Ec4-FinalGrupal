@@ -60,16 +60,39 @@ SELECT * FROM peliculas;
 --);
 
 -- Procedimientos almacenados de Peliculas
-CREATE OR REPLACE PROCEDURE sp_ListarPeliculas (
-    pelicula_cursor OUT SYS_REFCURSOR
-) AS
+CREATE OR REPLACE PROCEDURE sp_ListarPeliculas (listapelicula OUT SYS_REFCURSOR) AS
 BEGIN
-    OPEN pelicula_cursor FOR SELECT * FROM Peliculas ORDER BY TituloPeli ASC;
+    OPEN listapelicula FOR SELECT * FROM Peliculas;
+END;
+
+CREATE OR REPLACE PROCEDURE sp_RegistrarPelicula (tituloP IN VARCHAR2, anioP IN DATE, duracP IN VARCHAR2,
+    idiomaP IN VARCHAR2, sinopP  VARCHAR2, presuP IN NUMBER, ingresoP IN NUMBER, codEst IN CHAR, codDirec IN 
+    CHAR, codGen IN CHAR, codClas IN CHAR) AS
+BEGIN 
+    INSERT INTO Peliculas (TituloPeli, AniOEsPeli, DuracPeli, IdiomaPeli, SinopPeli, PresuPeli, IngresoPeli,
+    CodEstud, CodDirec, CodGenero, CodClasi) VALUES (tituloP, anioP, duracP, idiomaP, sinopP, presuP, ingresoP,
+    codEst, codDirec, codGen, codClas);
 END;
 
 --Desc peliculas;
-EXEC sp_ListarPeliculas();
+EXEC sp_ListarPeliculas;
 DROP PROCEDURE sp_ListarPeliculas;
+
+/*----------------------------------------------------------------
+CREATE OR REPLACE PROCEDURE sp_ListarPeliculas AS
+    v_CooPeli Peliculas.CooPeli%TYPE; v_TituloPeli Peliculas.TituloPeli%TYPE;
+    v_AniOEsPeli Peliculas.AniOEsPeli%TYPE; v_DuracPeli Peliculas.DuracPeli%TYPE;
+    v_IdiomaPeli Peliculas.IdiomaPeli%TYPE; v_SinopPeli Peliculas.SinopPeli%TYPE;
+    v_PresuPeli Peliculas.PresuPeli%TYPE; v_IngresoPeli Peliculas.IngresoPeli%TYPE;
+    v_CodEstud Peliculas.CodEstud%TYPE; v_CodDirec Peliculas.CodDirec%TYPE;
+    v_CodGenero Peliculas.CodGenero%TYPE; v_CodClasi Peliculas.CodClasi%TYPE;
+BEGIN
+    SELECT CooPeli, TituloPeli, AniOEsPeli, DuracPeli, IdiomaPeli, SinopPeli, PresuPeli, IngresoPeli
+        , CodEstud, CodDirec, CodGenero, CodClasi INTO v_CooPeli, v_TituloPeli, v_AniOEsPeli, v_DuracPeli, 
+        v_IdiomaPeli, v_SinopPeli, v_PresuPeli, v_IngresoPeli  , v_CodEstud, v_CodDirec, 
+        v_CodGenero, v_CodClasi FROM Peliculas ORDER BY TituloPeli ASC;
+END; */
+--------------------------------------------------
 
 
 
