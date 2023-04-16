@@ -130,5 +130,29 @@ namespace objCine
 
             ConOracle.Close();
         }
+        public void RegistrarPelicula(OracleConnection ConOracle, DataGridView dgv)
+        {
+            try {
+                ConOracle.Open();
+                OracleCommand cmd = new OracleCommand("sp_RegistrarPelicula", ConOracle);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.Add("tituloP", OracleDbType.Varchar2).Value = _Titulo;
+                cmd.Parameters.Add("anioP", OracleDbType.Varchar2).Value = _AnioEstreno;
+                cmd.Parameters.Add("duracP", OracleDbType.Varchar2).Value = _Duracion;
+                cmd.Parameters.Add("idiomaP", OracleDbType.Varchar2).Value = _Idioma;
+                cmd.Parameters.Add("sinopP", OracleDbType.Varchar2).Value = _Sinopsis;
+                cmd.Parameters.Add("presuP", OracleDbType.Varchar2).Value = _Presupuesto;
+                cmd.Parameters.Add("ingresoP", OracleDbType.Varchar2).Value = _Ingresos;
+                cmd.Parameters.Add("codEst", OracleDbType.Varchar2).Value = _CodEstud;
+                cmd.Parameters.Add("codDirec", OracleDbType.Varchar2).Value = _CodDirec;
+                cmd.Parameters.Add("codGen", OracleDbType.Varchar2).Value = _CodGenero;
+                cmd.Parameters.Add("codClas", OracleDbType.Varchar2).Value = _CodClasi;
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Pelicula registrada correctamente");
+            } catch (Exception e) {
+                MessageBox.Show("NADA SABES HACER: " + e.Message);
+            }
+        }
+
     }
 }

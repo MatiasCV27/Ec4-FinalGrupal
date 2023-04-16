@@ -31,10 +31,24 @@ namespace Ec4_FinalGrupal
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
+            Pe.Titulo = txtTituloP.Text;
+            Pe.FechaEstreno = dtpFeEstreno.Value;
+            Pe.Duracion = Convert.ToInt32(txtDuraP.Text);
+            Pe.Idioma = txtIdiomaP.Text;
+            Pe.Sinopsis = txtSinopP.Text;
+            Pe.Presupuesto = Convert.ToInt32(txtPresuP.Text);
+            Pe.Ingreso = Convert.ToInt32(txtIngresoP.Text);
+            Pe.CodEstud = txtCodE.Text;
+            Pe.CodDirec = txtCodD.Text;
+            Pe.CodGenero = txtCodG.Text;
+            Pe.CodClasi = txtCodC.Text;
 
-
-            Pe.ListarPelicula(Con, dgvPeliculas);
+            Pe.RegistrarPelicula(Con, dgvPeliculas);
             tbControlPeli.SelectedIndex = 2;
+
+            /*
+            Pe.ListarPelicula(Con, dgvPeliculas);
+            tbControlPeli.SelectedIndex = 2; */
         }
 
         private void FrmPeliculas_Load(object sender, EventArgs e)
